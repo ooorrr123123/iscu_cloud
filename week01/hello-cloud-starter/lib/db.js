@@ -19,3 +19,14 @@ export async function findUrlByShortCode(shortCode) {
 
   return rows[0]?.original_url ?? null;
 }
+
+export async function findUrlByOriginalUrl(originalUrl) {
+  const rows = await sql`
+    SELECT short_code
+    FROM urls
+    WHERE original_url = ${originalUrl}
+    LIMIT 1
+  `;
+
+  return rows[0]?.short_code ?? null;
+}
