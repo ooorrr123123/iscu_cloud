@@ -62,8 +62,6 @@ export default function Home() {
 
     setIsLoading(true);
 
-   setIsLoading(true);
-
    try {
      const response = await fetch("/api/shorten", {
        method: "POST",
